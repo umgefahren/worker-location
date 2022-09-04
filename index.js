@@ -29,5 +29,12 @@ window.onload = async () => {
     region.innerText = location.region
     region_code.innerText = location.region_code
     http_version.innerText = location.http_version
+    let map = L.map('map').setView([location.coordinates[0], location.coordinates[1]], 10)
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    const marker = L.marker([location.coordinates[0], location.coordinates[1]]).addTo(map);
     console.log(location)
 }
