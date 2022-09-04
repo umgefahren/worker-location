@@ -1,0 +1,16 @@
+name = "location-worker" # todo
+workers_dev = true
+
+main = "build/worker/shim.mjs"
+compatibility_date = "2022-01-20"
+
+[vars]
+WORKERS_RS_VERSION = "0.0.11"
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
+
+[[kv_namespaces]]
+binding = "IP_LOCATIONS"
+preview_id = "5cfa0c67e8bd43c98b0baf12d1991bae"
+id = "eddd595ef651414f82c9c3b4c8dff91a"
